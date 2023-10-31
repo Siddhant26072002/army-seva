@@ -9,6 +9,14 @@ connectToAtlas();
 app.use(express.json());
 app.use(cors());
 
+app.use(cors(
+  {
+    origin: ["https://deploy-mern-1whq.vercel.app"],
+    methods: ["POST","GET"],
+    credentials: true
+  }
+))
+
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/notes", require("./routes/notes"));
 app.use("/api/admin", require("./routes/admin"));
@@ -18,13 +26,7 @@ app.use('/api/pay', require("./routes/stripe"));
 
 // app.use("/api/team", require("./routes/team"));
 
-app.use(cors(
-  {
-    origin: ["https://deploy-mern-1whq.vercel.app"],
-    methods: ["POST","GET"],
-    credentials: true
-  }
-))
+
 
 app.listen(port, () => {
   console.log(`App listening on port http://localhost:${port}`)
