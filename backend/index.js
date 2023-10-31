@@ -6,16 +6,18 @@ const app = express()
 const port = 5000
 connectToAtlas();
 
-app.use(express.json());
 app.use(cors());
 
 app.use(cors(
   {
-    origin: ["https://deploy-mern-1whq.vercel.app"],
+    origin: ["https://army-seva-front.vercel.app"],
     methods: ["POST","GET"],
     credentials: true
   }
 ))
+
+
+app.use(express.json());
 
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/notes", require("./routes/notes"));
