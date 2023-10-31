@@ -20,7 +20,7 @@ app.use('/api/pay', require("./routes/stripe"));
 
 app.use(cors(
   {
-    origin: ["https://deploy-mern-1whq.vercel.app"],
+    origin: ["https://army-seva-front.vercel.app/"],
     methods: ["POST","GET"],
     credentials: true
   }
