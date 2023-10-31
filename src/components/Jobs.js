@@ -9,7 +9,7 @@ export default function Jobs() {
 
 
     const getJobs = async () => {
-        const res = await axios.get("http://localhost:5000/api/jobs/getjobs/");
+        const res = await axios.get("https://army-seva.vercel.app/api/jobs/getjobs/");
 
         setJobs(res.data);
 

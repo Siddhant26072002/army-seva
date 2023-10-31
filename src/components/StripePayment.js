@@ -22,7 +22,7 @@ function StripePayment() {
         }; 
      
         const response = await fetch( 
-          "http://localhost:5000/api/pay/create-checkout-session", 
+          "https://army-seva.vercel.app/api/pay/create-checkout-session", 
           { 
             method: "POST", 
             headers: headers, 

@@ -47,7 +47,7 @@ function Blogs() {
     };
 
     const getBlogs = async () => {
-        const res = await axios.get("http://localhost:5000/api/blogs/");
+        const res = await axios.get("https://army-seva.vercel.app/api/blogs/");
 
         setBlogs(res.data);
         // console.log(blogs)
@@ -60,7 +60,7 @@ function Blogs() {
         try {
 
 
-            const res = await axios.post(`http://localhost:5000/api/blogs/createblog/${userid}`,
+            const res = await axios.post(`https://army-seva.vercel.app/api/blogs/createblog/${userid}`,
                 JSON.stringify({ title, content }),
                 {
                     headers: { 'Content-Type': 'application/json', 'auth-token': localStorage.getItem('token') },
