@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "bot": "nodemon ./wa-bot/index.js"
+    "dev": "index.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,7 +19,5 @@
     "path": "^0.12.7",
     "stripe": "^11.11.0"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.20"
-  }
+  "devDependencies": {}
 }
