@@ -1,23 +1,15 @@
 const connectToAtlas = require("./db")
 const express = require('express')
 const cors = require('cors')
-
-const app = express()
 const port = 5000
+const app = express()
 connectToAtlas();
 
-app.use(cors());
-
-app.use(cors(
-  {
-    origin: ["https://army-seva-front.vercel.app"],
-    methods: ["POST","GET"],
-    credentials: true
-  }
-))
+// app.use(cors());
 
 
 app.use(express.json());
+
 
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/notes", require("./routes/notes"));
@@ -26,10 +18,6 @@ app.use("/api/blogs", require("./routes/blog"));
 app.use("/api/jobs", require("./routes/jobs"));
 app.use('/api/pay', require("./routes/stripe"));
 
-
-
 app.listen(port, () => {
   console.log(`App listening on port http://localhost:${port}`)
 })
-
-
